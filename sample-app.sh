@@ -1,12 +1,17 @@
 #!/bin/bash
 set -euo pipefail
 
-# Functie om mappen aan te maken wanneer deze niet bestaan
+# Function to create a directory if it doesn't exist
 create_directory_if_not_exists() {
   if [ ! -d "$1" ]; then
     mkdir -p "$1"
   fi
 }
+
+# Create directories if they don't exist
+create_directory_if_not_exists "tempdir"
+create_directory_if_not_exists "tempdir/templates"
+create_directory_if_not_exists "tempdir/static"
 
 mkdir tempdir
 mkdir tempdir/templates
